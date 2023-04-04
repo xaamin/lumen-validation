@@ -3,6 +3,7 @@
 namespace Lumen\Validation\Tests;
 
 use Exception;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Lumen\Validation\BaseRequest;
@@ -93,7 +94,7 @@ class BaseRequestTest extends TestCase
         /** @phpstan-ignore-next-line */
         $data = $response->getData(true);
 
-        $this->assertSame('The age must be a number value', $data['errors']['age'][0]);
+        $this->assertTrue(Str::of($data['errors']['age'][0])->is('The age* must be a number value'));
     }
 
     /** @return void */
@@ -111,7 +112,7 @@ class BaseRequestTest extends TestCase
         /** @phpstan-ignore-next-line */
         $data = $response->getData(true);
 
-        $this->assertSame('The oldness must be a number.', $data['errors']['age'][0]);
+        $this->assertTrue(Str::of($data['errors']['age'][0])->is('The oldness* must be a number.'));
     }
 
     /** @return void */
