@@ -1,0 +1,31 @@
+{
+    "name": "xaamin/lumen-validation",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Benjamín Martínez Mateos",
+            "email": "xaamin@outlook.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0|10.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0|^8.0",
+        "phpunit/phpunit": "^9.3",
+        "squizlabs/php_codesniffer": "^3.7",
+        "phpstan/phpstan": "^1.10"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Lumen\\Validation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lumen\\Validation\\Tests\\": "tests/"
+        }
+    }
+}
