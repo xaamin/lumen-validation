@@ -267,10 +267,11 @@ abstract class BaseRequest extends Request
      * @param  string|null  $param
      * @param  mixed  $default
      *
-     * @return array|string
+     * @return mixed|null
      */
     public function route($param = null, $default = null)
     {
+        /** @var array<int,mixed[]>|null */
         $route = call_user_func($this->getRouteResolver());
 
         if (is_null($route) || is_null($param)) {
