@@ -11,14 +11,14 @@ use Orchestra\Testbench\TestCase;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Contracts\Validation\Validator;
-use Lumen\Validation\LumenValidationServiceProvider;
+use Lumen\Validation\ValidationServiceProvider;
 use Lumen\Validation\Tests\Support\DummyBaseRequest;
 
 class BaseRequestTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
-        return [LumenValidationServiceProvider::class];
+        return [ValidationServiceProvider::class];
     }
 
     /** @return void */
