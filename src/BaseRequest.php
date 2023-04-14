@@ -260,4 +260,23 @@ abstract class BaseRequest extends Request
 
         return $this;
     }
+
+    /**
+     * Get the route handling the request.
+     *
+     * @param  string|null  $param
+     * @param  mixed  $default
+     *
+     * @return array|string
+     */
+    public function route($param = null, $default = null)
+    {
+        $route = call_user_func($this->getRouteResolver());
+
+        if (is_null($route) || is_null($param)) {
+            return $route;
+        }
+
+        return $route[2][$param] ?? $default;
+    }
 }
