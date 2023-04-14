@@ -4,7 +4,7 @@ namespace Lumen\Validation;
 
 use Illuminate\Support\ServiceProvider;
 
-class LumenValidationServiceProvider extends ServiceProvider
+class ValidationServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
